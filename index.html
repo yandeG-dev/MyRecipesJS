@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <title>Recettes Chic</title>
+    <link rel="stylesheet" href="recette.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🍽️ My Elegant Recipes</h1>
+      <form>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for a recipe…"
+        />
+        <button type="submit" id="btn">🔎</button>
+      </form>
+      <section>
+        <div id="results" class="card-list"></div>
+      </section>
+      <!-- <section>
+      <h2>Mon Carnet</h2>
+      <div id="favorites" class="card-list"></div>
+
+    </section> -->
+    </div>
+    <script src="recette.js"></script>
+  </body>
+</html>

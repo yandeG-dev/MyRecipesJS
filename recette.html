@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Détails de la Recette</title>
+    <link rel="stylesheet" href="recette.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <br />
+    <br />
+
+    <a href="index.html" class="lienRecette">Back</a>
+
+    <div class="container">
+      <h1 id="nom-recette" class="titre">Loading...</h1>
+
+      <img
+        id="image-recette"
+        class="imageInstruction"
+        src=""
+        alt="Image de la recette"
+      />
+
+      <p id="instructions-recette" class="instructions">
+      Loading instructions...
+      </p>
+    </div>
+
+    <script>
+      const nom = document.getElementById("nom-recette");
+      const image = document.getElementById("image-recette");
+      const instruction = document.getElementById("instructions-recette");
+
+      const param = new URLSearchParams(window.location.search);
+      const id = param.get("id");
+      async function affichageRecette() {
+        try {
+          if (id) {
+            const recup = await fetch(
+              `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+            ); //recuperation de l'url
+            const result = await recup.json();
+            const recette = result.meals[0];
+            nom.innerText = recette.strMeal;
+            image.src = recette.strMealThumb;
+            image.alt = recette.strMeal;
+            instruction.textContent = recette.strInstructions;
+          }
+        } catch (error) {
+          titre.textContent = "Erreur lors du chargement de la recette.";
+        }
+      }
+      affichageRecette();
+    </script>
+  </body>
+</html>
